@@ -1,0 +1,20 @@
+def factorial(num):
+    # check if number is 0 and return 1
+    if num == 0:
+        return 1
+    
+    # check if the number is positive
+    elif num > 0:
+        return num * factorial(num - 1)
+    
+    # check if the number is negative and return None
+    else:
+        return None
+
+
+def factorials(nums):
+    return [factorial(num) if factorial(num) is not None else 'Error' for num in nums]
+
+print(factorials([2, 3, 4])) # should print: [2, 6, 24]
+print(factorials([1, 5, 6])) # should print: [1, 120, 720]
+print(factorials([0, -3, 10])) # should print: [1, 'Error', 3628800]
